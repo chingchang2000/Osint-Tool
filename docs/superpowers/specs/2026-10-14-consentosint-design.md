@@ -1,6 +1,6 @@
 # ConsentOSINT — krav, trusselsmodel og arkitektur
 
-**Status:** Forslag til godkendelse — ingen produktionskode må skrives på baggrund af dokumentet endnu  
+**Status:** Godkendt af repository-ejeren 2026-10-14 — produktionskode afventer godkendelse af fase 1-implementeringsplanen  
 **Dato:** 2026-10-14  
 **Målrepository:** `chingchang2000/Osint-Tool` (`main`)  
 **Repository-status:** Offentligt og tomt ved gennemgangen 2026-10-14
@@ -339,18 +339,20 @@ Repository skal mindst få `README`, `SECURITY`, `PRIVACY`, `ABUSE_AND_SAFETY`, 
 - “En mulig sammenhæng er ikke en bekræftet identitet.”
 - “Kilden kan være forældet eller fejlagtig.”
 
-## 12. Beslutninger der kræver godkendelse før implementeringsplan
+## 12. Godkendte produktbeslutninger
 
-1. Godkendes local-first, enkeltbruger og loopback-only som første produktprofil (A1)?
-2. Godkendes server-renderet Jinja2/HTMX frem for en React-SPA (A2)?
-3. Godkendes de foreslåede hard limits og den absolutte retention på 30/180 dage (A7–A8)?
-4. Godkendes krypteringsprofilen, HMAC-bundet godkendelse og resolvermodellen (A4, A13–A14)?
-5. Skal UI fra første fase være dansk-only, engelsk-only eller tosproget (A10)?
-6. Godkendes Apache-2.0 som anbefalet kode-licens (A12)?
-7. Hvilke desktopplatforme og distributionsformer er releasekrav i første version: Python-installation, Docker-profil og/eller senere signeret desktop-pakke?
-8. Skal DNS og RDAP være hele v1-kildescopet, eller skal GitHub- og/eller HIBP-adapteren også leveres i første release?
+Repository-ejeren godkendte 2026-10-14 designet med de foreslåede standarder:
 
-Når disse er godkendt eller korrigeret, er næste artefakt en fil-for-fil TDD-implementeringsplan. Først derefter kan fase 1 påbegyndes efter en særskilt godkendelse.
+1. V1 er local-first, enkeltbruger og loopback-only.
+2. UI bygges server-renderet med Jinja2/HTMX; en isoleret grafkomponent kan tilføjes i fase 4.
+3. Grænserne i A7 og retention på 30 dage/absolut 180 dage anvendes.
+4. Krypteringsprofilen, HMAC-bundne godkendelser og resolvermodellen i A4 og A13–A14 anvendes.
+5. Brugerfladen er dansk-first og localization-ready; intern domæneterminologi er engelsk.
+6. Koden licenseres under Apache-2.0 med en separat Abuse and Safety Policy.
+7. Udviklerbaseline er lokal Python 3.12 på Windows 11, macOS 14+ og aktuel LTS Linux; Docker er valgfri i fase 5, og en signeret desktop-pakke vurderes senere.
+8. DNS og RDAP er v1-kildescopet. GitHub og HIBP forbliver valgfrie fase-3+-kandidater efter særskilt privacy-/kildereview og er ikke releasekrav.
+
+Næste artefakt er den fil-for-fil TDD-implementeringsplan for fase 1. Fase 1 må først implementeres efter særskilt godkendelse af den plan.
 
 ## 13. Kilder
 
